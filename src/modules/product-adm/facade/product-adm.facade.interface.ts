@@ -1,4 +1,4 @@
-export interface AddProductFacadeInputDto {
+export type AddProductFacadeInputDto = {
   id?: string;
   name: string;
   description: string;
@@ -6,18 +6,16 @@ export interface AddProductFacadeInputDto {
   stock: number;
 }
 
-export interface CheckStockFacadeInputDto {
+export type CheckStockFacadeInputDto = {
   productId: string;
 }
 
-export interface CheckStockFacadeOutputDto {
+export type CheckStockFacadeOutputDto = {
   productId: string;
   stock: number;
 }
 
 export default interface ProductAdmFacadeInterface {
   addProduct(input: AddProductFacadeInputDto): Promise<void>;
-  checkStock(
-    input: CheckStockFacadeInputDto
-  ): Promise<CheckStockFacadeOutputDto>;
+  checkStock(input: CheckStockFacadeInputDto): Promise<CheckStockFacadeOutputDto>;
 }
