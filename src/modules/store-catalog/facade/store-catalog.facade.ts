@@ -6,26 +6,18 @@ import StoreCatalogFacadeInterface, {
   FindStoreCatalogFacadeOutputDto,
 } from "./store-catalog.facade.interface";
 
-export interface UseCaseProps {
-  findUseCase: FindProductUseCase;
-  findAllUseCase: FindAllProductsUsecase;
-}
-
 export default class StoreCatalogFacade implements StoreCatalogFacadeInterface {
-  private _findUseCase: FindProductUseCase;
-  private _findAllUseCase: FindAllProductsUsecase;
 
-  constructor(props: UseCaseProps) {
-    this._findUseCase = props.findUseCase;
-    this._findAllUseCase = props.findAllUseCase;
+  constructor(
+    private findProduct: FindProductUseCase,
+    private findAllProducts: FindAllProductsUsecase
+  ) { }
+
+  async find(id: FindStoreCatalogFacadeInputDto): Promise<FindStoreCatalogFacadeOutputDto> {
+    return await this.findProduct.execute(id);
   }
 
-  async find(
-    id: FindStoreCatalogFacadeInputDto
-  ): Promise<FindStoreCatalogFacadeOutputDto> {
-    return await this._findUseCase.execute(id);
-  }
   async findAll(): Promise<FindAllStoreCatalogFacadeOutputDto> {
-    return await this._findAllUseCase.execute();
+    return await this.findAllProducts.execute();
   }
 }
