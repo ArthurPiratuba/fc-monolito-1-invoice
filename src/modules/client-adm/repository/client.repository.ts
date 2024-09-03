@@ -18,7 +18,7 @@ export default class ClientRepository implements ClientGateway {
       complement: entity.address.complement,
       city: entity.address.city,
       state: entity.address.state,
-      zipcode: entity.address.zipCode,
+      zipcode: entity.address.zipcode,
       createdAt: entity.createdAt,
       updatedAt: entity.updatedAt
     })

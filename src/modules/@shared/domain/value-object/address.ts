@@ -6,15 +6,15 @@ export default class Address implements ValueObject {
   _complement: string = ""
   _city: string = ""
   _state: string = ""
-  _zipCode: string = ""
+  _zipcode: string = ""
 
-  constructor(street: string, number: string, complement: string, city: string, state: string, zipCode: string) {
+  constructor(street: string, number: string, complement: string, city: string, state: string, zipcode: string) {
     this._street = street
     this._number = number
     this._complement = complement
     this._city = city
     this._state = state
-    this._zipCode = zipCode
+    this._zipcode = zipcode
 
   }
 
@@ -38,8 +38,8 @@ export default class Address implements ValueObject {
     return this._state
   }
 
-  get zipCode(): string {
-    return this._zipCode
+  get zipcode(): string {
+    return this._zipcode
   }
 
   validate() {
@@ -58,7 +58,7 @@ export default class Address implements ValueObject {
     if (this._state.length === 0) {
       throw new Error("State is required")
     }
-    if (this._zipCode.length === 0) {
+    if (this._zipcode.length === 0) {
       throw new Error("Zip code is required")
     }
   }

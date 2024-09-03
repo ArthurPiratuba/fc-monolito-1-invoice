@@ -26,7 +26,7 @@ export default class FindClientUseCase {
         result.address.complement,
         result.address.city,
         result.address.state,
-        result.address.zipCode,
+        result.address.zipcode,
       ),
       createdAt: result.createdAt,
       updatedAt: result.updatedAt

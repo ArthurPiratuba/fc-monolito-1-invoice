@@ -25,7 +25,7 @@ export default class AddClientUseCase {
         input.address.complement,
         input.address.city,
         input.address.state,
-        input.address.zipCode,
+        input.address.zipcode,
       )
     }
 
@@ -43,7 +43,7 @@ export default class AddClientUseCase {
         client.address.complement,
         client.address.city,
         client.address.state,
-        client.address.zipCode,
+        client.address.zipcode,
       ),
       createdAt: client.createdAt,
       updatedAt: client.updatedAt
